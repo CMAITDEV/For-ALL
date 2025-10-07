@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "781520f4-c29e-41c9-b353-bae015b541a0",
+		"name": "WhatsApp_India",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28980476"
+	},
+	"item": [
+		{
+			"name": "Inbound",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"channel\": \"WABA\",\r\n  \"appDetails\": {\r\n    \"type\": \"LIVE\"\r\n  },\r\n  \"recipient\": {},\r\n  \"events\": {\r\n    \"eventType\": \"User initiated\",\r\n    \"timestamp\": \"1730363658\",\r\n    \"date\": \"2024-October-31\"\r\n  },\r\n  \"eventContent\": {\r\n    \"message\": {\r\n      \"from\": \"919539927906\",\r\n      \"id\": \"wamid.HBgMOTE5NTM5OTI3OTA2FQIAEhggRDQ2REU0RTU4MjYzMDlDQTA3MDFGMTY5RThBNDYyNDQA\",\r\n      \"text\": {\r\n        \"body\": \"Hello\"\r\n      },\r\n      \"to\": \"919895530089\",\r\n      \"contentType\": \"text\",\r\n      \"messageType\": \"text\",\r\n      \"profileName\": \"Vineeth T\"\r\n    }\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webhook.chartermerc.net/datasnap/whatsapp/activities/inbound",
+					"protocol": "https",
+					"host": [
+						"webhook",
+						"chartermerc",
+						"net"
+					],
+					"path": [
+						"datasnap",
+						"whatsapp",
+						"activities",
+						"inbound"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"channel\":\"WABA\",\r\n   \"appDetails\":{\r\n      \"type\":\"LIVE\",\r\n      \"id\":\"\"\r\n   },\r\n   \"recipient\":{\r\n      \"to\":\"919539927906\",\r\n      \"recipient_type\":\"individual\"\r\n   },\r\n   \"batchId\":\"\",\r\n   \"campaignId\":\"\",\r\n   \"templateId\":\"call_me\",\r\n   \"templateCategory\":\"UTILITY\",\r\n   \"sender\":{\r\n      \"from\":\"919895530089\"\r\n   },\r\n   \"events\":{\r\n      \"eventType\":\"DELIVERY EVENTS\",\r\n      \"timestamp\":\"1730363809000\",\r\n      \"date\":\"2024-October-31\",\r\n      \"mid\":\"410190241031140648809503\"\r\n   },\r\n   \"notificationAttributes\":{\r\n      \"status\":\"sent\",\r\n      \"reason\":\"Submitted to channel\",\r\n      \"code\":\"100\"\r\n   },\r\n   \"convDetails\":{\r\n      \"conversationType\":\"utility\",\r\n      \"isBillable\":\"true\",\r\n      \"waConvId\":\"2030dff25df30e87fc18236a0b9295d4\",\r\n      \"kxBillable\":\"N\",\r\n      \"uim\":\"\",\r\n      \"bim\":\"\",\r\n      \"expiration_timestamp\":\"1730449740\"\r\n   }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webhook.chartermerc.net/datasnap/whatsapp/activities/status",
+					"protocol": "https",
+					"host": [
+						"webhook",
+						"chartermerc",
+						"net"
+					],
+					"path": [
+						"datasnap",
+						"whatsapp",
+						"activities",
+						"status"
+					],
+					"query": [
+						{
+							"key": "Accept",
+							"value": "application/json",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
